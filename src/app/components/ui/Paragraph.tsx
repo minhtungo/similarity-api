@@ -1,3 +1,4 @@
+import { mergeClassNames } from '@/lib/utils';
 import { cva, VariantProps } from 'class-variance-authority';
 import { FC, forwardRef, HTMLAttributes } from 'react';
 
@@ -23,8 +24,12 @@ interface ParagraphProps
 const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ className, size, children, ...props }, ref) => {
     return (
-      <p ref={ref} {...props} className={}>
-        Paragraph
+      <p
+        ref={ref}
+        {...props}
+        className={mergeClassNames(paragraphVariants({ size, className }))}
+      >
+        {children}
       </p>
     );
   }
