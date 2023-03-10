@@ -1,6 +1,6 @@
 import { mergeClassNames } from '@/lib/utils';
 import { cva, VariantProps } from 'class-variance-authority';
-import { FC, forwardRef, HTMLAttributes } from 'react';
+import { forwardRef, HTMLAttributes } from 'react';
 
 const paragraphVariants = cva(
   'max-w-prose text-slate-700 darkL:text-slate-300 mb-2 text-center',
