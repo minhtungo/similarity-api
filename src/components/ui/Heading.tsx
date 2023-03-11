@@ -25,13 +25,13 @@ interface HeadingProps
 const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
   ({ className, size, children, ...props }, ref) => {
     return (
-      <p
+      <h1
         ref={ref}
         {...props}
         className={mergeClassNames(headingVariants({ size, className }))}
       >
         {children}
-      </p>
+      </h1>
     );
   }
 );
