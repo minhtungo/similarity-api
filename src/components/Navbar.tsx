@@ -2,6 +2,7 @@ import { getServerSession } from 'next-auth';
 import Link from 'next/link';
 import { FC } from 'react';
 import { buttonVariants } from '@/components/ui/Button';
+import { SignInButton } from '@/components/button';
 
 const Navbar = async ({}) => {
   const session = await getServerSession();
