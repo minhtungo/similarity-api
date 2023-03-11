@@ -2,9 +2,9 @@ import { getServerSession } from 'next-auth';
 import Link from 'next/link';
 import { FC } from 'react';
 import { buttonVariants } from '@/components/ui/Button';
-import { SignInButton } from '@/components/button';
+import { SignInButton, SignOutButton } from '@/components/button';
 
-const Navbar = async ({}) => {
+const Navbar = async () => {
   const session = await getServerSession();
   return (
     <div className='back-drop-blur-sm dark:border-state-700 fixed top-0 left-0 right-0 z-50 flex h-20 items-center justify-between border-b border-slate-300 bg-white/75 shadow-sm dark:bg-slate-900'>
@@ -12,11 +12,9 @@ const Navbar = async ({}) => {
         <Link href='/' className={buttonVariants({ variant: 'link' })}>
           Text Similarity
         </Link>
-        <div className='md:hidden'>
-          <ThemeToggle />
-        </div>
+        <div className='md:hidden'>{/* <ThemeToggle /> */}</div>
         <div className='hidden gap-4 md:flex'>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <Link href='/' className={buttonVariants({ variant: 'ghost' })}>
             Documentation
           </Link>
