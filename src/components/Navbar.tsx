@@ -13,10 +13,16 @@ const Navbar = async () => {
         <Link href='/' className={buttonVariants({ variant: 'link' })}>
           Text Similarity
         </Link>
-        <div className='md:hidden'>{/* <ThemeToggle /> */}</div>
+        <div className='md:hidden'>
+          <ThemeToggle />
+        </div>
+
         <div className='hidden gap-4 md:flex'>
           <ThemeToggle />
-          <Link href='/' className={buttonVariants({ variant: 'ghost' })}>
+          <Link
+            href='/documentation'
+            className={buttonVariants({ variant: 'ghost' })}
+          >
             Documentation
           </Link>
           {session ? (
