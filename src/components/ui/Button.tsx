@@ -21,10 +21,10 @@ export const buttonVariants = cva(
         sm: 'h-9 px-2 rounded-md',
         lg: 'h-11 px-8 rounded-md',
       },
-      defaultVariant: {
-        variant: 'default',
-        size: 'default',
-      },
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
     },
   }
 );
