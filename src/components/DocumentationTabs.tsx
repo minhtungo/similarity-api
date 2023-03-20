@@ -14,12 +14,12 @@ const DocumentationTabs: FC = ({}) => {
         <TabsTrigger value='python'>Python</TabsTrigger>
       </TabsList>
       <TabsContent value='nodejs'>
-        <SimpleBar>
+        <SimpleBar forceVisible='y'>
           <Code animated language='javascript' code={nodejs} show />
         </SimpleBar>
       </TabsContent>
       <TabsContent value='python'>
-        <SimpleBar>
+        <SimpleBar forceVisible='y'>
           <Code animated language='python' code={python} show />
         </SimpleBar>
       </TabsContent>
