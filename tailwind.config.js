@@ -23,11 +23,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', ...fontFamily.sans],
       },
-      color: {
-        ...colors,
-        
-      }
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss-typography')],
+  // plugins: [require('tailwindcss-animate'), require('@tailwindcss-typography')],
 };
