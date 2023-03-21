@@ -30,7 +30,7 @@ export async function GET(
           error: 'You already have an API key.',
           createdApiKey: null,
         },
-        { status: 400 }
+        { status: 409 }
       );
     }
     const createdApiKey = await db.apiKey.create({
@@ -39,7 +39,7 @@ export async function GET(
         key: nanoid(),
       },
     });
-    return NextResponse.json({ error: null, createdApiKey }, { status: 401 });
+    return NextResponse.json({ error: null, createdApiKey }, { status: 201 });
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
