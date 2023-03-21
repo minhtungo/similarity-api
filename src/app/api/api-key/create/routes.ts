@@ -15,6 +15,7 @@ export async function GET(
     const user = await getServerSession(request, response, authOptions).then(
       (res) => res?.user
     );
+
     if (!user) {
       return NextResponse.json(
         { error: 'Not authorized', createdApiKey: null },
