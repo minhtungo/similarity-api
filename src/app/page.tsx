@@ -1,3 +1,4 @@
+import Button from '@/components/ui/Button';
 import Heading from '@/components/ui/Heading';
 import Paragraph from '@/components/ui/Paragraph';
 import type { Metadata } from 'next';
@@ -12,12 +13,12 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className='relative flex h-screen items-center justify-center overflow-x-hidden'>
-      <div className='container mx-auto h-full w-full max-w-7xl pt-32'>
-        <div className='flex h-full flex-col items-center justify-start gap-6 lg:items-start lg:justify-center'>
-          <Heading size='lg' className=' text-black dark:text-blue-500'>
-            Easily determine <br /> text similarity.
+      <div className='max-w-7x container mx-auto h-full w-full'>
+        <div className='flex h-full flex-col items-center justify-center gap-6'>
+          <Heading className=' text-black dark:text-gray-100'>
+            Easily determine text similarity.
           </Heading>
-          <Paragraph className='max-w-xl lg:text-left'>
+          <Paragraph className='max-w-3xl lg:text-center'>
             With the text similarity API, you can easily determine the
             similarity between two pieces of text with a free{' '}
             <Link
@@ -28,18 +29,9 @@ export default function Home() {
             </Link>
             .
           </Paragraph>
-          <div className='relative aspect-square w-full max-w-lg lg:absolute lg:left-1/2 lg:max-w-3xl'>
-            <Image
-              priority
-              quality={100}
-              style={{
-                objectFit: 'contain',
-              }}
-              fill
-              src=''
-              alt='type-writer'
-            />
-          </div>
+          <Link href='/documentation'>
+            <Button>Get Started</Button>
+          </Link>
         </div>
       </div>
     </main>

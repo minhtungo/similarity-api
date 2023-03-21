@@ -14,10 +14,12 @@ export const medata: Metadata = {
 
 const page: FC = ({}) => {
   return (
-    <div className='container mx-auto mt-12 max-w-7xl'>
-      <div className='flex flex-col items-center gap-6'>
-        <Heading>Making a request</Heading>
-        <Paragraph>api/v1/similarity</Paragraph>
+    <div className='container mx-auto max-w-7xl py-8'>
+      <div className='flex flex-col items-center gap-4'>
+        <div>
+          <Heading size='sm'>Making a request</Heading>
+          <Paragraph className='mt-1'>api/v1/similarity</Paragraph>
+        </div>
         <DocumentationTabs />
       </div>
     </div>

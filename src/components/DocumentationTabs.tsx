@@ -8,7 +8,7 @@ import { nodejs, python } from '@/helpers/documentation-code';
 
 const DocumentationTabs: FC = ({}) => {
   return (
-    <Tabs defaultValue='nodejs' className='w-full max-w-2xl '>
+    <Tabs defaultValue='nodejs' className='w-full max-w-2xl'>
       <TabsList>
         <TabsTrigger value='nodejs'>NodeJS</TabsTrigger>
         <TabsTrigger value='python'>Python</TabsTrigger>
