@@ -1,3 +1,4 @@
+import { ApiDashBoard, RequestApiKey } from '@/components/dashboard';
 import { authOptions } from '@/lib/auth';
 import { db } from '@/lib/db';
 import type { Metadata } from 'next';
@@ -20,11 +21,11 @@ const DashboardPage = async () => {
     },
   });
 
-  return <div className='mx-auto max-w-7xl pt-16'>
-    {
-      apiKey ? <ApiDashboard /> : <RequestApiKey />
-    }
-  </div>;
+  return (
+    <div className='mx-auto max-w-7xl pt-16'>
+      {apiKey ? <ApiDashBoard /> : <RequestApiKey />}
+    </div>
+  );
 };
 
 export default DashboardPage;

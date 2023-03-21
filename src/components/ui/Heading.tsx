@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { forwardRef, HTMLAttributes } from 'react';
 
 const headingVariants = cva(
-  'text-black dark:text-gray-50 text-center lg:text-left font-bold leading-tight tracking-tighter',
+  'text-black dark:text-gray-100 text-center lg:text-left font-bold leading-tight tracking-tighter',
   {
     variants: {
       size: {
