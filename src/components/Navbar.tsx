@@ -9,9 +9,12 @@ import { authOptions } from '@/lib/auth';
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
   return (
-    <div className='back-drop-blur-sm fixed top-0 left-0 right-0 z-50 flex h-20 items-center justify-between border-b border-slate-300 bg-white/75 shadow-sm dark:border-gray-900 dark:bg-black'>
+    <div className='back-drop-blur-sm fixed top-0 left-0 right-0 z-50 flex h-20 items-center justify-between border-b border-slate-300 bg-white/75 shadow-sm dark:border-gray-900/20 dark:bg-[#0d0d0d]'>
       <div className='container mx-auto flex w-full max-w-7xl items-center justify-between'>
-        <Link href='/' className={buttonVariants({ variant: 'link' })}>
+        <Link
+          href='/'
+          className='md:text-md select-none text-base text-gray-100 lg:text-lg'
+        >
           Text Similarity
         </Link>
         <div className='md:hidden'>

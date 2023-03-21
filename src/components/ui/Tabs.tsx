@@ -43,7 +43,7 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     className={mergeClassNames(
-      'mt-2 rounded-md border border-slate-300 bg-slate-100 p-6 dark:border-slate-700 dark:bg-gray-900/60',
+      'mt-2 rounded-md border border-slate-300 bg-slate-100 p-6 dark:border-gray-700/50 dark:bg-gray-900/30',
       className
     )}
     {...props}
