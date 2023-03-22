@@ -37,10 +37,9 @@ const Table = ({ userRequests }: { userRequests: any }) => {
     <ThemeProvider theme={darkTheme}>
       <DataGrid
         style={{
-          backgroundColor:
-            applicationTheme === 'light' ? 'white' : 'rgba(17 24 39 / 0.3)',
           fontSize: '1rem',
         }}
+        className='border border-slate-300 bg-slate-100 p-6 dark:border-gray-700/20 dark:bg-gray-900/10'
         pageSizeOptions={[5]}
         disableRowSelectionOnClick
         autoHeight
