@@ -1,11 +1,33 @@
-import { FC } from 'react'
+import { authOptions } from '@/lib/auth';
+import { db } from '@/lib/db';
+import { formatDistance } from 'date-fns';
+import { getServerSession } from 'next-auth';
+import { notFound } from 'next/navigation';
 
-interface ApiDashBoardProps {
-  
-}
+const ApiDashBoard = async () => {
+  const user = await getServerSession(authOptions);
+  if (!user) return notFound();
 
-const ApiDashBoard: FC<ApiDashBoardProps> = ({}) => {
-  return <div>ApiDashBoard</div>
-}
+  const apiKeys = await db.apiKey.findMany({
+    where: {
+      userId: user.user.id,
+    },
+  });
 
-export default ApiDashBoard
+  const activeApiKey = apiKeys.find((apiKey) => apiKey.enabled);
+
+  if (!activeApiKey) return notFound();
+
+  const userRequests = await db.apiRequest.findMany({
+    where: {
+      apiKeyId: {
+        in: apiKeys.map((key) => key.id),
+      },
+    },
+  });
+
+
+
+  return <div>ApiDashBoard</div>;
+};
+export default ApiDashBoard;

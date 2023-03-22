@@ -23,6 +23,7 @@ const DashboardPage = async () => {
 
   return (
     <div className='mx-auto max-w-7xl pt-16'>
+      {/* @ts-expect-error Server Component */}
       {apiKey ? <ApiDashBoard /> : <RequestApiKey />}
     </div>
   );
