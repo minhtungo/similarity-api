@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import Heading from '@/ui/Heading';
 import Paragraph from '@/ui/Paragraph';
 import { Input } from '@/ui/Input';
+import Table from '@/components/dashboard/Table';
 
 const ApiDashBoard = async () => {
   const user = await getServerSession(authOptions);
@@ -41,6 +42,10 @@ const ApiDashBoard = async () => {
         <Paragraph>Your API key:</Paragraph>
         <Input className='w-fit truncate' readOnly value={activeApiKey.key} />
       </div>
+      <Paragraph className='mt-4 -mb-4 text-center md:text-left'>
+        API requests made in the last 30 days:
+      </Paragraph>
+      <Table userRequests={serializedRequests} />
     </div>
   );
 };
