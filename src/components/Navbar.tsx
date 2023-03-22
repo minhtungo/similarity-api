@@ -1,6 +1,5 @@
 import { getServerSession } from 'next-auth';
 import Link from 'next/link';
-import { FC } from 'react';
 import { buttonVariants } from '@/components/ui/Button';
 import { SignInButton, SignOutButton } from '@/components/button';
 import ThemeToggle from './ThemeToggle';
