@@ -7,6 +7,7 @@ import Heading from '@/ui/Heading';
 import Paragraph from '@/ui/Paragraph';
 import { Input } from '@/ui/Input';
 import Table from '@/components/dashboard/Table';
+import ApiKeyOptions from './ApiKeyOptions';
 
 const ApiDashBoard = async () => {
   const user = await getServerSession(authOptions);
@@ -41,6 +42,7 @@ const ApiDashBoard = async () => {
       <div className='flex flex-col items-center justify-center gap-4 md:flex-row md:justify-start'>
         <Paragraph>Your API key:</Paragraph>
         <Input className='w-fit truncate' readOnly value={activeApiKey.key} />
+        <ApiKeyOptions apiKey={activeApiKey.key} />
       </div>
       <Paragraph className='mt-4 -mb-4 text-center md:text-left'>
         API requests made in the last 30 days:
