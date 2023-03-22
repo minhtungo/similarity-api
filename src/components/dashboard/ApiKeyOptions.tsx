@@ -13,6 +13,7 @@ import { FC, useState } from 'react';
 import Button from '@/ui/Button';
 import { toast } from '@/ui/Toast';
 import { createApiKey } from '@/helpers/create-api-key';
+import { revokeApiKey } from '@/helpers/revoke-api-key';
 
 interface ApiKeyOptionsProps {
   apiKey: string;
@@ -37,6 +38,22 @@ const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ apiKey }) => {
       });
     } finally {
       setIsCreatingNew(false);
+    }
+  };
+
+  const revokeCurrentApiKey = async () => {
+    setIsRevoking(true);
+    try {
+      await revokeApiKey();
+      router.refresh();
+    } catch (error) {
+      toast({
+        title: 'Error revoking your API key',
+        message: 'Please try again later.',
+        type: 'error',
+      });
+    } finally {
+      setIsRevoking(false);
     }
   };
 
@@ -75,8 +92,7 @@ const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ apiKey }) => {
           Create new key
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={createNewApiKey}>
-          {/* <DropdownMenuItem onClick={revokeCurrentApiKey}> */}
+        <DropdownMenuItem onClick={revokeCurrentApiKey}>
           Revoke key
         </DropdownMenuItem>
       </DropdownMenuContent>
