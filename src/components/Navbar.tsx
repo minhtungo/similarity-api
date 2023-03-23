@@ -12,7 +12,7 @@ const Navbar = async () => {
       <div className='container mx-auto flex w-full max-w-7xl items-center justify-between'>
         <Link
           href='/'
-          className='md:text-md select-none text-base text-gray-100 lg:text-lg'
+          className='md:text-md select-none text-base text-gray-900 dark:text-gray-100 lg:text-lg'
         >
           Text Similarity
         </Link>
